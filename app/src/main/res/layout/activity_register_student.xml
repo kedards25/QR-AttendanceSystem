@@ -6,4 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".RegisterStudent">
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="157dp"
+        android:ems="10"
+        android:hint="full name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:ems="10"
+        android:hint="mobile number"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/spnr_Course"
+        app:layout_constraintStart_toStartOf="@+id/spnr_Course"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="79dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spnr_Course"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="71dp"
+        app:layout_constraintBottom_toTopOf="@+id/spnr_batch"
+        app:layout_constraintEnd_toEndOf="@+id/spnr_batch"
+        app:layout_constraintStart_toStartOf="@+id/spnr_batch"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <Spinner
+        android:id="@+id/spnr_batch"
+        android:layout_width="204dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="227dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnr_Course" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         pref= this.getPreferences(Context.MODE_PRIVATE);
+         pref= getSharedPreferences("EmailShared", MODE_PRIVATE);
         boolean isEmailRegistered=pref.getBoolean("EmailRegistered",false);
         String selVal=pref.getString("PrimaryEmail", null);
         if (isEmailRegistered)
