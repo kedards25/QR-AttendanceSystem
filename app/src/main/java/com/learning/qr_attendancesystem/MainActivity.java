@@ -10,6 +10,7 @@ import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,13 +25,19 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE
     };
 
-    static boolean isEmailRegistered;
-    static String selVal;
+
+    SharedPreferences pref;
+//    static boolean isEmailRegistered;
+     String selVal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         pref= this.getPreferences(Context.MODE_PRIVATE);
+        boolean isEmailRegistered=pref.getBoolean("EmailRegistered",false);
+        String selVal=pref.getString("PrimaryEmail", null);
         if (isEmailRegistered)
         {
             Toast.makeText(MainActivity.this,"Registered Email:\n"+selVal,Toast.LENGTH_LONG).show();
@@ -50,9 +57,14 @@ public class MainActivity extends AppCompatActivity {
             builder.setItems(accountNames, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                     selVal=accountNames[which];
-                    Toast.makeText(MainActivity.this,selVal,Toast.LENGTH_SHORT).show();
-                    isEmailRegistered=true;
+                     String selVal1=accountNames[which];
+
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("PrimaryEmail", selVal1);
+                    editor.putBoolean("EmailRegistered",true);
+                      editor.commit();
+                    Toast.makeText(MainActivity.this,selVal1,Toast.LENGTH_SHORT).show();
+                    //isEmailRegistered=true;
                     Intent registerIntent=new Intent(MainActivity.this,RegisterStudent.class);
                     startActivity(registerIntent);
                 }
