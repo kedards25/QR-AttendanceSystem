@@ -72,7 +72,7 @@ public class RegisterStudent extends AppCompatActivity {
 
                 }
 
-                    txtView.setText("Registration Successful..!!");
+                Toast.makeText(RegisterStudent.this,"Registration Successful..!!",Toast.LENGTH_LONG).show();
 
             }
 
