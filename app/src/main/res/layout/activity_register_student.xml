@@ -34,12 +34,12 @@
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:hint="mobile number"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/spnr_Course"
-        app:layout_constraintStart_toStartOf="@+id/spnr_Course"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
@@ -52,23 +52,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Spinner
-        android:id="@+id/spnr_Course"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="71dp"
-        app:layout_constraintBottom_toTopOf="@+id/spnr_batch"
-        app:layout_constraintEnd_toEndOf="@+id/spnr_batch"
-        app:layout_constraintStart_toStartOf="@+id/spnr_batch"
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:hint="Course you've registered"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
-    <Spinner
-        android:id="@+id/spnr_batch"
-        android:layout_width="204dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="227dp"
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Batch you're attending"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnr_Course" />
+        app:layout_constraintStart_toStartOf="@+id/button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
