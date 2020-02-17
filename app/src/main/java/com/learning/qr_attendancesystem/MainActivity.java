@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("PrimaryEmail", selVal1);
                     editor.putBoolean("EmailRegistered",true);
                       editor.commit();
-                    Toast.makeText(MainActivity.this,selVal1,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this,selVal1,Toast.LENGTH_SHORT).show();
                     //isEmailRegistered=true;
                     Intent registerIntent=new Intent(MainActivity.this,RegisterStudent.class);
                     startActivity(registerIntent);

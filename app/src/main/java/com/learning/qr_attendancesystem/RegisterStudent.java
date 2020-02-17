@@ -2,6 +2,7 @@ package com.learning.qr_attendancesystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +57,13 @@ public class RegisterStudent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addStudent();
+                Intent qrIntent=new Intent(RegisterStudent.this,QR_Scanner.class);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                startActivity(qrIntent);
             }
         });
     }
@@ -80,6 +88,7 @@ public class RegisterStudent extends AppCompatActivity {
             public void onFailure(Call<Students> call, Throwable t) {
                 Toast.makeText(RegisterStudent.this,"Error Thrown"+t.getMessage(),Toast.LENGTH_LONG).show();
             }
+
         });
     }
 }
